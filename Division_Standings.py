@@ -1,5 +1,5 @@
 import streamlit as st
-from functions import get_standings
+from functions import get_standings, get_top_points
 
 def display_standings_by_division(standings, division_filter):
     # Filter for the specific division
