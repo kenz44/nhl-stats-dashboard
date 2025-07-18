@@ -30,7 +30,13 @@ def get_standings():
             'losses': team['losses'],
             'ot': team['otLosses'],
             'points': team['points'],
-            'streak': team.get('streakCode', 'N/A')
+            'streak': f"{team['streakCode']}{team['streakCount']}",
+            'gF': team['goalFor'],
+            'gA': team['goalAgainst'],
+            'last10': f"{team['l10RegulationWins']}-{team['l10Losses']}-{team['l10OtLosses']}",
+            'winPctg': team['winPctg'],
+            "gF_average": team['goalsForPctg'],
+            "gA_average": (team['goalAgainst'] / team['gamesPlayed'])
         }
         standings.append(team_data)
 
